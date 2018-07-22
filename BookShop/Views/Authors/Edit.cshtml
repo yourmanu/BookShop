@@ -1,0 +1,27 @@
+﻿@model BookShop.Models.Author
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Author</h2>
+
+<form asp-action="Edit">
+    <div class="row form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Name"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="Name" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit"  asp-route-AuthorId="@Model.AuthorId" value="Save" class="btn btn-sm btn-primary" />
+            <input type="submit" asp-action="Index" value="Back to List" class="btn btn-sm btn-success" />
+        </div>
+    </div>
+</form>
